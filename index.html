@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ES6 Import with A11y Dialog</title>
+        <link rel="stylesheet" href="assets/src/components/dialog/dialog.css">
+    </head>
+    <body>
+      <div class="main" id="main" aria-label="Content">
+        <h1>A11y Dialog</h1>
+  
+        <p><a href="https://github.com/edenspiekermann/a11y-dialog">Get the code on GitHub</a> — 
+          <button class="link-like" data-a11y-dialog-show="my-accessible-dialog">Open the dialog window</button></p>
+  
+        <p>To see this in action, you just need to 
+          <button class="link-like" data-a11y-dialog-show="my-accessible-dialog">open the dialog window</button>. 
+          Once it’s open, you should not be able to interact with other links on the main page like 
+          <a href="https://github.com/edenspiekermann/a11y-dialog">going to the main GitHub page</a>. 
+          The focus is said to be “trapped” inside the dialog until the user explicitely decides to leave it.</p>
+      </div>
+  
+      <div class="dialog" id="my-accessible-dialog">
+        <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
+        <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog">
+          <div role="document">
+            <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
+  
+            <h1 id="dialogTitle">Subscribe to ESPI Newsletter</h1>
+  
+            <p id="dialogDescription">Fill in the ridiculously small form below to receive our ridiculously 
+              cool newsletter!</p>
+
+          </div>
+        </div>
+      </div><!--/.dialog-->
+
+    <script src="assets/dist/bundle.js"></script>
+
+    </body>
+</html>
